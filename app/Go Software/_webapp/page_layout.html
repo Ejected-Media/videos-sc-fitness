@@ -13,6 +13,12 @@
 .main_nav_wrap div a:visited { color: blue; }
 .main_nav_wrap div a:hover { color: green; }
 
+.user_signin_area_wrap { position: fixed; top: 25px; right: 25px; }
+
+.profile_area_wrap { position: fixed; left: 25px; bottom: 25px; }
+
+.action_button_wrap { position: fixed; right: 25px; bottom: 25px; cursor: pointer; }
+.action_button_data { border: 1px solid #999; width: 55px; height: 55px; border-radius: 50%; }
 
 </style>
 <script src="https://unpkg.com/mithril/mithril.js"></script>
@@ -115,6 +121,23 @@ function activateNav () { console.log('activating function activateNav()');
 </div><!-- - main_area_wrap - -->
 
 </main>
+
+
+<aside class="user_signin_area_wrap">
+  <div class="user_signin_area_data">
+    Sign in
+  </div><!-- - . user_signin_area_data - -->
+</aside>
+
+<aside class="profile_area_wrap">
+  <div class="profile_area_data">
+    Profile
+  </div><!-- - . profile_area_data - -->
+</aside>
+
+<aside class="action_button_wrap">
+  <div class="action_button_data"> </div>
+</aside>
 
 </body>
 </html>
