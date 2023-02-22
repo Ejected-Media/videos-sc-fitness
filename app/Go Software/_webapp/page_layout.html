@@ -2,6 +2,7 @@
 <head>
 <style>
 
+.main_nav_button_wrap { margin-top: 25px; cursor: pointer; width: 25px; text-align: center; outline: 1px solid #aaa; padding: 5px; }
 
 .main_nav_wrap { margin: 45px; }
 
@@ -12,9 +13,22 @@
 .main_nav_wrap div a:hover { color: green; }
 
 
-
 </style>
 <script src="https://unpkg.com/mithril/mithril.js"></script>
+<script>
+
+function activateNav () { console.log('test');
+  var mainNav = document.getElementById('mainNav');
+  var display = getComputedStyle(mainNav).display;
+  
+  if (display == "none") {
+		mainNav.style.display = "block";
+	} else {
+		mainNav.style.display = "none";
+	}
+};
+  
+</script>
 </head>
 <body>
 
@@ -22,34 +36,30 @@
   videos.sc.fitness - app
 </header>
 
+<div class="main_nav_button_wrap" onClick="activateNav();">
+  Nav
+</div><!-- - . main_nav_button_wrap - -->
+
 <main>
 
-<nav class="main_nav_wrap">
+<nav class="main_nav_wrap" id="mainNav">
 
-  <div><a href="https://sc.fitness/">Front Splash</a></div>
-  <div><a href="https://sites.google.com/sc.fitness/sc-2-0-homepage/home">About</a></div>
-  <div><a href="https://old.shannycohen.fitness/exercises">Exercise Library Old</a></div>
-  <div><a href="https://clients.sc.fitness/">Clients</a></div>
-  <div><a href="https://workouts.sc.fitness/">Workouts</a></div>
-
+  <div class="main_nav_data">
+    <div><a href="https://sc.fitness/">
+      Front Splash</a></div>
+    <div><a href="https://sites.google.com/sc.fitness/sc-2-0-homepage/home">
+      About</a></div>
+    <div><a href="https://old.shannycohen.fitness/exercises">
+      Exercise Library Old</a></div>
+    <div><a href="https://clients.sc.fitness/">
+      Clients</a></div>
+    <div><a href="https://workouts.sc.fitness/">
+      Workouts</a></div>
+  
+  </div>
 </nav>
 
-<div class="main_area_wrap">
-
-  <script>
-    var root = document.querySelector('.main_area_wrap')
-
-    // your code goes here!
-    
-    m.mount(root, {
-      view: function() {
-        return m("h1", "Video Library")
-      }
-    })
-    
-  </script>
-
-  <style>
+<style>
   
 .video_gallery_area_wrap { outline: 1px solid #ddd; min-height: 45px; padding: 5px; }
 
@@ -59,7 +69,22 @@
 
 .video_gallery_area_wrap header { outline: 1px solid #bbb; min-height: 15px; padding: 10px; width: 100%; }
   
-  </style>
+</style>
+
+
+<div class="main_area_wrap">
+
+  <script>
+    var root = document.querySelector('.main_area_wrap')
+    
+    m.mount(root, {
+      view: function() {
+        return m("h1", "Video Library")
+      }
+    })
+    
+  </script>
+
 
   <section class="video_gallery_area_wrap">  
     <div class="video_gallery_area_data">
@@ -84,7 +109,6 @@
 
     </div><!-- - . video_gallery_area_data - -->
   </section><!-- - . video_gallery_area_wrap - -->
-
 
 </div><!-- - main_area_wrap - -->
 
