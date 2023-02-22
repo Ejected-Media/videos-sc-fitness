@@ -17,11 +17,12 @@
 <script src="https://unpkg.com/mithril/mithril.js"></script>
 <script>
 
-function activateNav () { console.log('activating main nav');
+function activateNav () { console.log('activating function activateNav()');
   var mainNav = document.getElementById('mainNav');
   var display = getComputedStyle(mainNav).display;
   if (display == "none") { mainNav.style.display = "block";
 	} else { mainNav.style.display = "none"; }
+  console.log('main nav display set to ', display);
 };
   
 </script>
@@ -59,12 +60,14 @@ function activateNav () { console.log('activating main nav');
   
 .video_gallery_area_wrap { outline: 1px solid #ddd; min-height: 45px; padding: 5px; }
 
-.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 75px; background-color: #ddd; min-height: 125px; }
+.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 75px; background-color: #ddd; min-height: 125px; padding: 5px; border-bottom: 2px solid #444; }
 
 .video_gallery_area_wrap main { display: inline-block; width: 70%; }
 
 .video_gallery_area_wrap header { outline: 1px solid #bbb; min-height: 15px; padding: 10px; width: 100%; }
-  
+
+.video_gallery_area_wrap footer { background-color: #333; color: #eee; padding: 5px; margin-top: 5px; }
+
 </style>
 
 
