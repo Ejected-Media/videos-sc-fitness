@@ -70,7 +70,9 @@ function activateNav () { console.log('activating function activateNav()');
   
 .video_gallery_area_wrap { outline: 1px solid #ddd; min-height: 45px; padding: 5px; }
 
-.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 75px; background-color: #ddd; min-height: 125px; padding: 5px; border-bottom: 2px solid #444; }
+.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 75px; background-color: #ddd; min-height: 125px; padding: 5px; border-bottom: 2px solid #444; position: relative; }
+
+.video_gallery_nav_button { position: absolute; bottom: 5px; right: 5px; cursor: pointer; }
 
 .video_gallery_area_wrap main { display: inline-block; width: 70%; }
 
@@ -93,17 +95,31 @@ function activateNav () { console.log('activating function activateNav()');
         return m("h1", "Video Library")
       }
     })
+
+function activateOptions () { console.log('test');
+ 
+  var galleryNav = document.getElementById('galleryNav');
+  var width = getComputedStyle(galleryNav).width;
+  if (width == "75px") { galleryNav.style.width = "125px";
+	} else { galleryNav.style.width = "75px"; }
+  console.log('main nav display set to ', width);
+
+};
     
   </script>
+  
+  
 
 
   <section class="video_gallery_area_wrap">  
     <div class="video_gallery_area_data">
 	
-	  <nav>
+	  <nav id="galleryNav">
 	    <div class="video_gallery_nav_data">
 	      one
+	      
 	    </div><!-- - video_gallery_nav_data - -->
+	    <div class="video_gallery_nav_button" onClick="activateOptions();">open</div>
 	  </nav>
 	
 	  <main>
