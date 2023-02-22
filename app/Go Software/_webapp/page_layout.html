@@ -14,6 +14,7 @@
 
 
 </style>
+<script src="https://unpkg.com/mithril/mithril.js"></script>
 </head>
 <body>
 
@@ -32,6 +33,24 @@
   <div><a href="https://workouts.sc.fitness/">Workouts</a></div>
 
 </nav>
+
+<div class="main_area_wrap">
+
+    <script>
+    var root = document.querySelector('.main_area_wrap')
+
+    // your code goes here!
+    
+    m.mount(root, {
+    view: function() {
+        return m("h1", "Video Library")
+    }
+})
+    
+    
+    </script>
+
+</div><!-- - main_area_wrap - -->
 
 </main>
 
