@@ -36,19 +36,50 @@
 
 <div class="main_area_wrap">
 
-    <script>
+  <script>
     var root = document.querySelector('.main_area_wrap')
 
     // your code goes here!
     
     m.mount(root, {
-    view: function() {
+      view: function() {
         return m("h1", "Video Library")
-    }
-})
+      }
+    })
     
-    
-    </script>
+  </script>
+
+  <style>
+  
+.video_gallery_area_wrap { outline: 1px solid #ddd; min-height: 45px; padding: 5px; }
+
+.video_gallery_area_wrap header { outline: 1px solid #bbb; min-height: 15px; margin: 10px; }
+  
+  </style>
+
+  <section class="video_gallery_area_wrap">  
+    <div class="video_gallery_area_data">
+	
+	  <nav>
+	    <div class="video_gallery_nav_data">
+	    
+	    </div><!-- - video_gallery_nav_data - -->
+	  </nav>
+	
+	  <main>
+        <header>
+      
+	    </header>
+	
+	  </main>
+	
+	  <footer>
+	
+	  </footer>
+
+    </div><!-- - . video_gallery_area_data - -->
+  </section><!-- - . video_gallery_area_wrap - -->
+
 
 </div><!-- - main_area_wrap - -->
 
