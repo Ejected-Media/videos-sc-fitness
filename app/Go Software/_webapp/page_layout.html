@@ -2,13 +2,17 @@
 <head>
 <style>
 
-.main_logo_area_wrap { background-color: #333; color: #eee; text-align: center; width: 125px; padding: 15px; font-family: sans-serif; letter-spacing: 0.08em; margin-top: 15px; }
+body { background-image: url('e_bg_c.jpg'); no-repeat center center fixed; background-size: cover; }
 
-.main_nav_button_wrap { margin-top: 25px; cursor: pointer; width: 25px; text-align: center; outline: 1px solid #aaa; padding: 5px; }
+.main_logo_area_wrap { background-color: #333; color: #eee; text-align: center; width: 125px; padding: 15px; font-family: sans-serif; letter-spacing: 0.08em; margin-top: 15px; display: inline-block; }
+
+.main_nav_button_wrap { margin-top: 5px; cursor: pointer; width: 25px; text-align: center; outline: 1px solid #aaa; padding: 5px; display: inline-block; background-color: #eee; }
+
+.app_page_name { display: inline-block; margin-left: 25px; }
 
 #mainNav { display: none; }
 
-.main_nav_wrap { margin: 45px; }
+.main_nav_wrap {  position: fixed; top: 0; left: 0; background-color: #fff; z-index: 100; padding: 55px; border-right: 2px solid #888; bottom: 0; }
 .main_nav_wrap div { margin-bottom: 35px; }
 
 .main_nav_wrap div a { color: blue; text-decoration: none; }
@@ -17,7 +21,7 @@
 
 .user_signin_area_wrap { position: fixed; top: 25px; right: 25px; }
 
-.profile_area_wrap { position: fixed; left: 25px; bottom: 25px; }
+.profile_area_wrap { position: fixed; left: 25px; bottom: 25px; color: #fafafa; font-size: 12px; font-family: monospace; cursor: pointer; }
 
 .action_button_wrap { position: fixed; right: 25px; bottom: 25px; cursor: pointer; }
 .action_button_data { border: 1px solid #999; width: 55px; height: 55px; border-radius: 50%; }
@@ -39,17 +43,27 @@ function activateNav () { console.log('activating function activateNav()');
 <body>
 
 <header>
-  <div>videos.sc.fitness - app</div>
   <div class="main_logo_area_wrap">Shanny Cohen<br />Fitness</div>
+  
+  <div class="app_page_name"></div>
+  
 </header>
 
-<div class="main_nav_button_wrap" onClick="activateNav();">
-  Nav
-</div><!-- - . main_nav_button_wrap - -->
+  <div class="main_nav_button_wrap" onClick="activateNav();">
+    Nav
+  </div><!-- - . main_nav_button_wrap - -->
 
 <main>
 
 <nav class="main_nav_wrap" id="mainNav">
+
+  <div class="main_logo_area_wrap">Shanny Cohen<br />Fitness</div>
+
+  <div class="main_nav_name">videos.sc.fitness - app</div>
+  
+   <div class="main_nav_button_wrap" onClick="activateNav();">
+    Nav
+  </div><!-- - . main_nav_button_wrap - -->
 
   <div class="main_nav_data">
     <div><a href="https://sc.fitness/">
@@ -68,9 +82,12 @@ function activateNav () { console.log('activating function activateNav()');
 
 <style>
   
-.video_gallery_area_wrap { outline: 1px solid #ddd; min-height: 45px; padding: 5px; }
+.video_gallery_area_wrap { min-height: 45px; padding: 5px; background-color: #fafafa; position: absolute; right: 20%; left: 15px; bottom: 75px; top: 150px; border-left: 3px solid #222; z-index: 50; }
 
-.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 125px; background-color: #ddd; min-height: 125px; padding: 5px; border-bottom: 2px solid #444; position: relative; padding-bottom: 45px; }
+.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 125px; background-color: #ddd; min-height: 225px; padding: 5px; border-bottom: 2px solid #444; position: relative; padding-bottom: 45px; }
+
+.video_gallery_nav_data { }
+.video_gallery_nav_data .name { background-color: #fff; padding: 5px; display: block; position: relative; left: 0; right: 0; top: 0; text-align: center; margin-bottom: 5px; font-weight: bold; }
 
 .video_gallery_nav_button { position: absolute; bottom: 5px; right: 5px; cursor: pointer; }
 
@@ -88,7 +105,7 @@ function activateNav () { console.log('activating function activateNav()');
 <div class="main_area_wrap">
 
   <script>
-    var root = document.querySelector('.main_area_wrap')
+    var root = document.querySelector('.app_page_name')
     
     m.mount(root, {
       view: function() {
@@ -120,7 +137,7 @@ function activateOptions () { console.log('test');
 	
 	  <nav id="galleryNav">
 	    <div class="video_gallery_nav_data">
-	      <span>Exercise Filters</span>
+	      <span class="name">Exercise Filters</span>
 	      
 	      <div class="ease_nav_wrap">
 	        <div>Difficulty</div>
