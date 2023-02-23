@@ -70,7 +70,7 @@ function activateNav () { console.log('activating function activateNav()');
   
 .video_gallery_area_wrap { outline: 1px solid #ddd; min-height: 45px; padding: 5px; }
 
-.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 75px; background-color: #ddd; min-height: 125px; padding: 5px; border-bottom: 2px solid #444; position: relative; padding-bottom: 45px; }
+.video_gallery_area_wrap nav { display: inline-block; vertical-align: top; min-width: 125px; background-color: #ddd; min-height: 125px; padding: 5px; border-bottom: 2px solid #444; position: relative; padding-bottom: 45px; }
 
 .video_gallery_nav_button { position: absolute; bottom: 5px; right: 5px; cursor: pointer; }
 
@@ -100,8 +100,8 @@ function activateOptions () { console.log('test');
  
   var galleryNav = document.getElementById('galleryNav');
   var width = getComputedStyle(galleryNav).width;
-  if (width == "75px") { galleryNav.style.width = "125px";
-	} else { galleryNav.style.width = "75px"; }
+  if (width == "125px") { galleryNav.style.width = "215px";
+	} else { galleryNav.style.width = "125px"; }
   console.log('main nav display set to ', width);
 
 };
@@ -120,7 +120,7 @@ function activateOptions () { console.log('test');
 	
 	  <nav id="galleryNav">
 	    <div class="video_gallery_nav_data">
-	      <span>one</span>
+	      <span>Exercise Filters</span>
 	      
 	      <div class="ease_nav_wrap">
 	        <div>Difficulty</div>
