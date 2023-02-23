@@ -108,7 +108,11 @@ function activateOptions () { console.log('test');
     
   </script>
   
-  
+<style>
+
+.ease_option_data { display: inline-block; width: 20px; height: 20px; outline: 1px solid #888; margin: 5px; }
+
+</style>
 
 
   <section class="video_gallery_area_wrap">  
@@ -116,7 +120,21 @@ function activateOptions () { console.log('test');
 	
 	  <nav id="galleryNav">
 	    <div class="video_gallery_nav_data">
-	      one
+	      <span>one</span>
+	      
+	      <div class="ease_nav_wrap">
+	        <div>Difficulty</div>
+	        
+	        <div class="ease_options_wrap">
+	          
+	          <div class="ease_option_data"></div>
+	          <div class="ease_option_data"></div>
+	          <div class="ease_option_data"></div>
+	        
+	        </div><!-- - . ease_options_wrap - -->
+	        
+	      </div><!-- - . ease_nav_wrap - -->
+
 	      
 	    </div><!-- - video_gallery_nav_data - -->
 	    <div class="video_gallery_nav_button" onClick="activateOptions();">open</div>
