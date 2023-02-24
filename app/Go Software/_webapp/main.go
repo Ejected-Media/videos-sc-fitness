@@ -12,7 +12,7 @@ package main
 import (
 		"os"
 		"log"
-		
+				
 		"text/template"
 		"net/http"
 )
@@ -58,7 +58,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
   }  //. .  pageData
   
   
-  pageFilePath := template.Must(template.ParseFiles("page_layout.html"))
+  pageFilePath := template.Must(template.ParseFiles("files/page_layout.html"))
   pageFilePath.Execute(w, pageData)
   
 }  //  .  indexHandler
@@ -72,17 +72,22 @@ func main() {
     appName := "videos.sc.fitness"
     
     
+    
     http.HandleFunc("/", indexHandler)
     http.HandleFunc("/account", indexHandler)
     http.HandleFunc("/profile", indexHandler)
+    
 
 
+    fileServer := http.FileServer(http.Dir("./pics"))
+	http.Handle("/pics/", http.StripPrefix("/pics", fileServer))
+    
 
 // -- -
         port := os.Getenv("PORT")
         if port == "" {
-                port = "8080"
-                log.Printf("Loading _webapp with default port")
+          port = "8080"
+          log.Printf("Loading _webapp with default port")
         }
         log.Printf("_webapp is active and Listening on port %s", port)
         
