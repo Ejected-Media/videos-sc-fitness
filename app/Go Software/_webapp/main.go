@@ -1,14 +1,12 @@
 // . hi
 
 
-
 //  _webapp labs foundation by ejected media
-// . . sc.fitness - videos
+// . . sc.fitness - videos app
 
 package main
 
 // .
-
 import (
 		"os"
 		"log"
@@ -71,14 +69,11 @@ func main() {
 
     appName := "videos.sc.fitness"
     
-    
-    
     http.HandleFunc("/", indexHandler)
     http.HandleFunc("/account", indexHandler)
     http.HandleFunc("/profile", indexHandler)
-    
 
-
+// -
     fileServer := http.FileServer(http.Dir("./pics"))
 	http.Handle("/pics/", http.StripPrefix("/pics", fileServer))
     
